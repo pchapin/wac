@@ -1,8 +1,8 @@
 /*!
-    \file   Lexer.hpp
-    \brief  A class that reads raw text and produces tokens.
-    \author (C) Copyright 2010 by Peter C. Chapin <peter@openwatcom.org>
-*/
+ *  \file   Lexer.hpp
+ *  \brief  A class that reads raw text and produces tokens.
+ *  \author (C) Copyright 2024 by Peter Chapin <owpeter@pchapin.org>
+ */
 
 #include <string>
 #include "SourceFile.hpp"

@@ -1,8 +1,9 @@
 <?xml version="1.0"?>
-<!DOCTYPE chapter PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
-  "http://www.docbook.org/xml/4.4/docbookx.dtd">
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/sch/docbook.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
   
-<chapter id="Build">
+<chapter xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1" xml:id="build">
   <title>Building wac</title>
 
   <para>This chapter describes how to build wac and the associated documentation.</para>

@@ -1,8 +1,8 @@
 /*!
-    \file   main.cpp
-    \brief  The main program of the Open Watcom Ada compiler.
-    \author (C) Copyright 2010 by Peter C. Chapin <peter@openwatcom.org>
-*/
+ *  \file   main.cpp
+ *  \brief  The main program of the Open Watcom Ada compiler.
+ *  \author (C) Copyright 2024 by Peter Chapin <owpeter@pchapin.org>
+ */
 
 #include <cwchar>
 #include <exception>
@@ -21,7 +21,7 @@ int main( )
 
         // For now read the source file.
         while( (ch = source.next_char( )) != WEOF ) {
-            std::cout << static_cast< char >( ch );
+            std::cout << static_cast<char>( ch );
         }
     }
     catch( const std::exception &e ) {

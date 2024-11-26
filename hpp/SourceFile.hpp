@@ -1,8 +1,8 @@
 /*!
-    \file   SourceFile.hpp
-    \brief  Declarations of services for reading source files.
-    \author (C) Copyright 2010 by Peter C. Chapin <peter@openwatcom.org>
-*/
+ *  \file   SourceFile.hpp
+ *  \brief  Declarations of services for reading source files.
+ *  \author (C) Copyright 2024 by Peter Chapin <owpeter@pchapin.org>
+ */
 
 #ifndef SOURCEFILE_HPP
 #define SOURCEFILE_HPP

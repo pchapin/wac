@@ -30,3 +30,18 @@
 *.exe
 *.out
 *.app
+
+# Open Watcom specific files
+*.err
+*.mk
+*.mk1
+*.lk1
+*.map
+*.sym
+
+# YACC output
+ytab.c
+ytab.h
+
+# Generated documentation
+doc/internal

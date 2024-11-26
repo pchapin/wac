@@ -1,8 +1,8 @@
 /*!
-    \file   errors.cpp
-    \brief  Various error reporting services.
-    \author (C) Copyright 2010 by Peter C. Chapin <peter@openwatcom.org>
-*/
+ *  \file   errors.cpp
+ *  \brief  Various error reporting services.
+ *  \author (C) Copyright 2024 by Peter Chapin <owpeter@pchapin.org>
+ */
 
 #include <cstdlib>
 #include <iostream>

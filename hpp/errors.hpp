@@ -1,8 +1,8 @@
 /*!
-    \file   errors.hpp
-    \brief  Declarations of various error reporting services.
-    \author (C) Copyright 2010 by Peter C. Chapin <peter@openwatcom.org>
-*/
+ *  \file   errors.hpp
+ *  \brief  Declarations of various error reporting services.
+ *  \author (C) Copyright 2024 by Peter Chapin <owpeter@pchapin.org>
+ */
 
 #ifndef ERRORS_HPP
 #define ERRORS_HPP

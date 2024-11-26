@@ -1,8 +1,8 @@
 /*!
-    \file   namespace.hpp
-    \brief  Doxygen documentation for the namespaces used by wac.
-    \author (C) Copyright 2010 by Peter C. Chapin <peter@openwatcom.org>
-*/
+ *  \file   namespace.hpp
+ *  \brief  Doxygen documentation for the namespaces used by wac.
+ *  \author (C) Copyright 2024 by Peter Chapin <owpeter@pchapin.org>
+ */
 
 /*!
  * \namespace wac

@@ -1,37 +1,24 @@
 <?xml version="1.0"?>
-<!DOCTYPE book PUBLIC "-//OASIS//DTD DocBook XML V4.4//EN"
-  "http://www.docbook.org/xml/4.4/docbookx.dtd" [
-
-<!ELEMENT xi:include (xi:fallback?) >
-<!ATTLIST xi:include
-    xmlns:xi   CDATA      #FIXED     "http://www.w3.org/2001/XInclude"
-    href       CDATA      #REQUIRED
-    parse      (xml|text) "xml"
-    encoding   CDATA      #IMPLIED >
-<!ELEMENT xi:fallback ANY>
-<!ATTLIST xi:fallback
-    xmlsn:xi   CDATA      #FIXED     "http://www.w3.org/2001/XInclude" >
-<!ENTITY % local.chapter.class "| xi:include">
-]>
+<?xml-model href="http://docbook.org/xml/5.1/rng/docbookxi.rng" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="http://docbook.org/xml/5.1/sch/docbook.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
 
 <!-- FILE        : wac-Design.xml
      SUBJECT     : Master document for the wac design documentation set.
-     AUTHOR      : (C) Copyright 2010 by Peter C. Chapin
+     AUTHOR      : (C) Copyright 2024 by Peter Chapin <owpeter@pchapin.org>
 
 This is the design documentation for the Open Watcom Ada compiler. -->
 
-<book status="draft">
-  <bookinfo>
+<book xmlns="http://docbook.org/ns/docbook" xmlns:xi="http://www.w3.org/2001/XInclude"
+  xmlns:xlink="http://www.w3.org/1999/xlink" version="5.1" status="draft">
+  <info>
     <title>Open Watcom Ada Compiler Design Documentation</title>
     <author>
-      <firstname>Peter</firstname>
-      <surname>Chapin</surname>
-      <othername role="mi">C.</othername>
+      <personname> <firstname>Peter</firstname> <surname>Chapin</surname> </personname>
     </author>
     <authorinitials>pcc</authorinitials>
     <copyright>
-      <year>2010</year>
-      <holder>Peter C. Chapin</holder>
+      <year>2024</year>
+      <holder>Peter Chapin</holder>
     </copyright>
     <legalnotice>
       <para> Permission is granted to copy, distribute and/or modify this document under the
@@ -45,21 +32,21 @@ This is the design documentation for the Open Watcom Ada compiler. -->
     <revhistory>
       <revision>
         <revnumber>0.0</revnumber>
-        <date>2010-12-31</date>
+        <date>2024-12-31</date>
         <authorinitials>pcc</authorinitials>
         <revremark>Initial release (well, not really).</revremark>
       </revision>
     </revhistory>
-  </bookinfo>
-  <preface id="Introduction">
+  </info>
+
+  <preface xml:id="Introduction">
     <title>Introduction</title>
 
-    <para>
-      <emphasis>This project is not officially connected with the Open Watcom project. I
-        presumptuously use "Open Watcom" in the name of this project because a) one of this
-        project's goals is to be well integrated into the Open Watcom tool chain, and b) I
-        entertain wild fantasies that perhaps one day this project could become an official part
-        of Open Watcom</emphasis>.</para>
+    <para> <emphasis>This project is not officially connected with the Open Watcom project. I
+      presumptuously use "Open Watcom" in the name of this project because a) one of this
+      project's goals is to be well integrated into the Open Watcom tool chain, and b) I
+      entertain wild fantasies that perhaps one day this project could become an official part
+      of Open Watcom</emphasis>.</para>
 
     <para>This document describes the design of the Open Watcom Ada compiler, wac. My plan for
       implementing the compiler is to write the front end (from scratch) and then use the Open
@@ -68,10 +55,10 @@ This is the design documentation for the Open Watcom Ada compiler. -->
       other tools such as the profiler and code browser. I also hope to support all the usual
       Open Watcom target systems, including the 16 bit systems.</para>
 
-    <para>Of course I understand that accomplishing all of this by myself is extremely unlikely.
-      However, it is my hope that as this project matures it will start to attract the attention
-      of others in both the Open Watcom and Ada communities. With some help perhaps all of this
-      can be done in a reasonable amount of time.</para>
+    <para>I understand that accomplishing all of this by myself is extremely unlikely. However,
+      it is my hope that as this project matures it will start to attract the attention of
+      others in both the Open Watcom and Ada communities. With some help perhaps all of this can
+      be done in a reasonable amount of time.</para>
 
     <para>This project gives me, and any other wac contributors who join me, an opportunity to
       build a new compiler from scratch using modern tools and methods. This project also has
@@ -201,11 +188,10 @@ This is the design documentation for the Open Watcom Ada compiler. -->
 
     </section>
 
-
   </preface>
 
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="doc-Build.xml"/>
-  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="doc-Lexical.xml"/>
+  <xi:include href="doc-Build.xml"/>
+  <xi:include href="doc-Lexical.xml"/>
 
   <!-- <bibliography> ... </bibliography> -->
 
