@@ -27,6 +27,7 @@
 *.lib
 
 # Executables
+agc
 *.exe
 *.out
 *.app
@@ -39,9 +40,9 @@
 *.map
 *.sym
 
-# YACC output
-ytab.c
-ytab.h
+# Bison output
+ada.tab.cpp
+ada.tab.hpp
 
 # Generated documentation
 doc/internal

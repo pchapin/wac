@@ -17,7 +17,7 @@ namespace scanner {
     //! Exception for file open errors.
     class OpenFailure : public wac::RunTimeError {
     public:
-        explicit OpenFailure( const std::string &error_message ) throw( ):
+        explicit OpenFailure( const std::string &error_message ) noexcept :
             RunTimeError( error_message )
             { }
     };
@@ -25,7 +25,7 @@ namespace scanner {
     //! Exception for file read errors.
     class ReadFailure : public wac::RunTimeError {
     public:
-        explicit ReadFailure( const std::string &error_message ) throw( ) :
+        explicit ReadFailure( const std::string &error_message ) noexcept :
             RunTimeError( error_message )
             { }
     };
@@ -33,7 +33,7 @@ namespace scanner {
     //! Exception for invalid (or unsupported) source file encodings.
     class InvalidEncoding : public wac::RunTimeError {
     public:
-        explicit InvalidEncoding( const std::string &error_message ) throw( ) :
+        explicit InvalidEncoding( const std::string &error_message ) noexcept :
             RunTimeError( error_message )
             { }
     };
@@ -41,7 +41,7 @@ namespace scanner {
     //! Exception for invalid (or unsupported) input characters.
     class InvalidCharacter : public wac::RunTimeError {
     public:
-        explicit InvalidCharacter( const std::string &error_message ) throw( ) :
+        explicit InvalidCharacter( const std::string &error_message ) noexcept :
             RunTimeError( error_message )
             { }
     };
@@ -78,22 +78,21 @@ namespace scanner {
         };
 
         explicit SourceFile(
-            const char *file_name, const encoding_type expected_encoding = AUTOMATIC )
-            throw( OpenFailure, std::bad_alloc );
+            const char *file_name, const encoding_type expected_encoding = AUTOMATIC );
 
        ~SourceFile( ) throw( );
        
-        std::wint_t   next_char( ) throw( InvalidCharacter, InvalidEncoding, ReadFailure );
-        line_type     current_line( ) const throw( );
-        column_type   current_column( ) const throw( );
-        encoding_type current_encoding( ) const throw( );
+        std::wint_t   next_char( );
+        line_type     current_line( ) const noexcept;
+        column_type   current_column( ) const noexcept;
+        encoding_type current_encoding( ) const noexcept;
 
     private:
         // Disable copying the old fashion way.
         SourceFile( const SourceFile & );
         SourceFile &operator=( const SourceFile & );
         
-        void detect_encoding( ) throw( InvalidEncoding );
+        void detect_encoding( );
 
         std::ifstream *file;
         bool           start_of_line;

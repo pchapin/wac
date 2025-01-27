@@ -2,18 +2,21 @@
 /****************************************************************************
 FILE    : ada.ypp
 SUBJECT : Grammar for Ada 2005
-AUTHOR  : (C) Copyright 2010 by Peter C. Chapin <peter@openwatcom.org>
+AUTHOR  : (C) Copyright 2010 by Peter Chapin <owpeter@pchapin.org>
 
-This grammar is in a form acceptable to Open Watcom's yacc.
+This grammar is in a form acceptable to Bison.
 ****************************************************************************/
 
 #include <iostream>
-
-extern int yylex( );
-extern int yyerror( const char * );
-extern int current_line;
-
 %}
+
+
+%code {
+    extern int yylex( yy::parser::semantic_type *yylval );
+}
+
+
+%require "3.2"
 
 %token Y_ABORT
 %token Y_ABS
@@ -572,8 +575,7 @@ select_statement:
 
 %%
 
-int yyerror( const char *message )
+void yy::parser::error( const std::string &message )
 {
-  std::cout << "Error [line " << current_line << "]: " << message << "\n";
-  return 0;
+  std::cout << "Error [line " /* << current_line */ << "]: " << message << "\n";
 }

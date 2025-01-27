@@ -24,8 +24,7 @@ namespace scanner {
      * \exception OpenFailure The specified file could not be opened.
      */
     SourceFile::SourceFile(
-        const char * const  file_name, const encoding_type expected_encoding )
-        throw( OpenFailure, std::bad_alloc ) :
+        const char * const  file_name, const encoding_type expected_encoding ) :
 
         file          ( 0       ),
         start_of_line ( true    ),
@@ -43,7 +42,7 @@ namespace scanner {
     }
 
 
-    SourceFile::~SourceFile( ) throw( )
+    SourceFile::~SourceFile( ) noexcept
     {
         try {
             delete file;
@@ -80,7 +79,7 @@ namespace scanner {
      *
      * \bug This method only properly handles ASCII files. This obviously needs to be improved.
      */
-    std::wint_t SourceFile::next_char( ) throw( InvalidCharacter, InvalidEncoding, ReadFailure )
+    std::wint_t SourceFile::next_char( )
     {
         if( encoding == AUTOMATIC ) detect_encoding( );
 
@@ -115,7 +114,7 @@ namespace scanner {
      *
      * \return The line number of the last character returned by next_char().
      */
-    SourceFile::line_type SourceFile::current_line( ) const throw( )
+    SourceFile::line_type SourceFile::current_line( ) const noexcept
     {
         return( line_number );
     }
@@ -127,7 +126,7 @@ namespace scanner {
      *
      * \return The column number of the last character returned by next_char().
      */
-    SourceFile::column_type SourceFile::current_column( ) const throw( )
+    SourceFile::column_type SourceFile::current_column( ) const noexcept
     {
         return( column_number );
     }
@@ -140,7 +139,7 @@ namespace scanner {
      *
      * \return The encoded used by the file.
      */
-    SourceFile::encoding_type SourceFile::current_encoding( ) const throw( )
+    SourceFile::encoding_type SourceFile::current_encoding( ) const noexcept
     {
         return( encoding );
     }
@@ -157,7 +156,7 @@ namespace scanner {
      * in various (probably unlikely) cases. This should be improved eventually. The most
      * notable problem is that a UTF16LE file without a BOM will be mistaken for UTF8.
      */
-    void SourceFile::detect_encoding( ) throw( InvalidEncoding )
+    void SourceFile::detect_encoding( )
     {
         char bom[2];
 
